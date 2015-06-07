@@ -1,38 +1,83 @@
 package net.verstarr.days2payday;
 
-import android.app.ListActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import java.util.ArrayList;
+import java.util.Collections;
 
+import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends ListActivity {
 
+    // keys for reading data from SharedPreferences
+    public static final String CHOICES = "pref_numberOfChoices";
+    public static final String REGIONS = "pref_regionsToInclude";
+
+    private boolean phoneDevice = true; // used to force portrait mode
+    private boolean preferencesChanged = true; // did preferences change?
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
+        // set default values in the app's SharedPreferences
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+
+        // register listener for SharedPreferences changes
+        PreferenceManager.getDefaultSharedPreferences(this).
+                registerOnSharedPreferenceChangeListener(
+                        preferenceChangeListener);
+
+        // determine screen size
+        int screenSize = getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK;
+
+        // if device is a tablet, set phoneDevice to false
+        if (screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE ||
+                screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE )
+            phoneDevice = false; // not a phone-sized device
+
+        // if running on phone-sized device, allow only portrait orientation
+        if (phoneDevice)
+            setRequestedOrientation(
+                    ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    } // end method onCreate
+
+    // called after onCreate completes execution
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    protected void onStart()
+    {
+        super.onStart();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (preferencesChanged)
+        {
+            // now that the default preferences have been set,
+            // initialize QuizFragment and start the quiz
+            QuizFragment quizFragment = (QuizFragment)
+                    getFragmentManager().findFragmentById(R.id.quizFragment);
+            quizFragment.updateGuessRows(
+                    PreferenceManager.getDefaultSharedPreferences(this));
+            quizFragment.updateRegions(
+                    PreferenceManager.getDefaultSharedPreferences(this));
+            quizFragment.resetQuiz();
+            preferencesChanged = false;
         }
-
-        return super.onOptionsItemSelected(item);
-    }
+    } // end method onStart
 }

@@ -52,8 +52,7 @@
                 android:id="@+id/paycheckTextView"
                 android:gravity="center"
                 android:layout_gravity="center_horizontal"
-                android:textSize="30dp"
-                android:layout_weight="1" />
+                android:textSize="30dp" />
 
             <ListView
                 android:id="@android:id/list"
@@ -69,8 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/budgetItem"
                 android:id="@+id/newBudgetItemButton"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1" />
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
 </LinearLayout>
