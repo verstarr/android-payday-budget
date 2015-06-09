@@ -9,8 +9,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -22,7 +26,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends FragmentActivity {
 
     // keys for reading data from SharedPreferences
     public static final String CHOICES = "pref_numberOfChoices";
@@ -37,13 +41,50 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // set default values in the app's SharedPreferences
-        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        // Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        if (findViewById(R.id.fragment_container_date) != null) {
 
-        // register listener for SharedPreferences changes
-        PreferenceManager.getDefaultSharedPreferences(this).
-                registerOnSharedPreferenceChangeListener(
-                        preferenceChangeListener);
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            // Create a new Fragment to be placed in the activity layout
+            PaydayBannerFragment firstFragment = new PaydayBannerFragment();
+
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            firstFragment.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getFragmentManager().beginTransaction().add(R.id.fragment_container_date,firstFragment).commit();
+        }
+
+        // Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        if (findViewById(R.id.fragment_container_list) != null) {
+
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            // Create a new Fragment to be placed in the activity layout
+            PaydayBannerFragment firstFragment = new PaydayBannerFragment();
+
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            firstFragment.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getFragmentManager().beginTransaction().add(R.id.fragment_container_list,firstFragment).commit();
+        }
+
 
         // determine screen size
         int screenSize = getResources().getConfiguration().screenLayout &
@@ -66,18 +107,6 @@ public class MainActivity extends ListActivity {
     {
         super.onStart();
 
-        if (preferencesChanged)
-        {
-            // now that the default preferences have been set,
-            // initialize QuizFragment and start the quiz
-            QuizFragment quizFragment = (QuizFragment)
-                    getFragmentManager().findFragmentById(R.id.quizFragment);
-            quizFragment.updateGuessRows(
-                    PreferenceManager.getDefaultSharedPreferences(this));
-            quizFragment.updateRegions(
-                    PreferenceManager.getDefaultSharedPreferences(this));
-            quizFragment.resetQuiz();
-            preferencesChanged = false;
-        }
+
     } // end method onStart
 }
