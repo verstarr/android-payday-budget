@@ -6,69 +6,20 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:orientation="vertical">
 
-        <LinearLayout android:layout_weight="2" android:layout_height="fill_parent" android:layout_width="fill_parent"
-            android:id="@+id/paydayLinearLayout"
-            android:orientation="vertical"
-            android:weightSum="1">
+    <fragment
+        android:id="@+id/paydayBannerFragment"
+        android:name="net.verstarr.days2payday.PaydayBannerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/payday_banner_layout"
+        android:layout_weight="2" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:id="@+id/daysLinearLayout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/days"
-                    android:id="@+id/daysTextView"
-                    android:gravity="center"
-                    android:textSize="50dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/daysToPayday"
-                    android:id="@+id/daysDescTextView"
-                    android:gravity="center"
-                    android:layout_gravity="center_vertical"
-                    android:textSize="30dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout android:layout_weight="1" android:layout_height="fill_parent" android:layout_width="fill_parent"
-            android:id="@+id/budgetLinearLayout"
-            android:orientation="vertical" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="$100,000"
-                android:id="@+id/paycheckTextView"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal"
-                android:textSize="30dp" />
-
-            <ListView
-                android:id="@android:id/list"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_gravity="fill"
-                android:layout_marginBottom="@dimen/budget_item_padding"
-                android:layout_marginTop="@dimen/budget_item_padding"
-                android:layout_weight="1" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/budgetItem"
-                android:id="@+id/newBudgetItemButton"
-                android:layout_gravity="center_horizontal" />
-        </LinearLayout>
+    <fragment
+        android:id="@+id/budgetListFragment"
+        android:name="net.verstarr.days2payday.BudgetListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_budget_list"
+        android:layout_weight="1" />
 
 </LinearLayout>
