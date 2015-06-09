@@ -8,6 +8,12 @@
         android:title="Expand Calendar"
         quickapp:showAsAction="always"/>
 
+    <item android:id="@+id/minimize_calendar"
+        android:icon="@android:drawable/ic_notification_clear_all"
+        android:title="Collapse Calendar"
+        quickapp:showAsAction="always"
+        android:visible="false"/>
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" quickapp:showAsAction="never" />
 </menu>
