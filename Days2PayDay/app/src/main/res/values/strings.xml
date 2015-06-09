@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Days 2 Pay Day</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="daysToPayday">Day(s) Until Pay Day!!!</string>
-    <string name="days" />
-    <string name="budgetItem">New Budget Item</string>
-</resources>
