@@ -11,15 +11,15 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
-    private Button cameraButton;
+    private Button tempButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cameraButton = (Button)findViewById(R.id.btn_camera);
+        tempButton = (Button)findViewById(R.id.btn_camera);
 
-        cameraButton.setOnClickListener(new View.OnClickListener() {
+        tempButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SecondaryActivityView.class);

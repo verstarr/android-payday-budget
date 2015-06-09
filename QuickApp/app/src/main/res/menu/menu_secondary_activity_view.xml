@@ -1,7 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:quickapp="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="example.com.quickapp.SecondaryActivityView">
+
+    <item android:id="@+id/expand_calendar"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Expand Calendar"
+        quickapp:showAsAction="always"/>
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+        android:orderInCategory="100" quickapp:showAsAction="never" />
 </menu>

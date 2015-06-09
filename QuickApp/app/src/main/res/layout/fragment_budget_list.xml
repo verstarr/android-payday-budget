@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.verstarr.days2payday.BudgetListFragment">
+
+    <LinearLayout android:layout_weight="1" android:layout_height="fill_parent" android:layout_width="fill_parent"
+        android:id="@+id/budgetLinearLayout"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$100,000"
+            android:id="@+id/paycheckTextView"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp" />
+
+        <ListView
+            android:id="@+id/budget_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="fill"
+            android:layout_marginBottom="@dimen/budget_item_padding"
+            android:layout_marginTop="@dimen/budget_item_padding"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/budgetItem"
+            android:id="@+id/newBudgetItemButton"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+</LinearLayout>

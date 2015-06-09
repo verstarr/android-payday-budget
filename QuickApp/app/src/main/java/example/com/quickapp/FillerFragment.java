@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 public class FillerFragment extends Fragment {
 
     public FillerFragment() {
+
     }
 
     @Override
