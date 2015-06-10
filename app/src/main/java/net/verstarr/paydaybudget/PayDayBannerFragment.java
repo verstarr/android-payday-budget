@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import example.com.quickapp.R;
-
 public class PayDayBannerFragment extends Fragment {
     // configures the QuizFragment when its View is created
     @Override

@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import example.com.quickapp.R;
-
 
 public class CalendarActivity extends ActionBarActivity {
 

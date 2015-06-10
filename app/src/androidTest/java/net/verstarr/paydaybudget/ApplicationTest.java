@@ -1,4 +1,4 @@
-package example.com.quickapp;
+package net.verstarr.paydaybudget;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

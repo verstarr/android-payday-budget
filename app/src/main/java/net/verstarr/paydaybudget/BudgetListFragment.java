@@ -11,8 +11,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import example.com.quickapp.R;
-
 
 public class BudgetListFragment extends Fragment {
     private ListView budgetLV;

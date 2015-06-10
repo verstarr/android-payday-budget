@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.0 rc2"
 
     defaultConfig {
-        applicationId "example.com.quickapp"
+        applicationId "net.verstarr.paydaybudget"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1

@@ -8,8 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import example.com.quickapp.R;
-
 public class SecondaryActivityView extends ActionBarActivity {
 
     private Fragment bannerFrag;
