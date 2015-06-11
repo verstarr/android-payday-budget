@@ -2,6 +2,7 @@ package net.verstarr.paydaybudget;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class BudgetListFragment extends Fragment {
         budgetLV = (ListView) view.findViewById(R.id.budget_list);
 
         // store the saved budgets in an ArrayList then sort them
-        budgets = new ArrayList<String>();
+        budgets = new ArrayList<>();
         budgets.add("Hello");
         budgets.add("my");
         budgets.add("name");
@@ -36,9 +37,14 @@ public class BudgetListFragment extends Fragment {
         budgets.add("ver");
         Collections.sort(budgets, String.CASE_INSENSITIVE_ORDER);
 
-        // create ArrayAdapter and use it to bind tags to the ListView
-        //adapter = new ArrayAdapter<String>(getActivity(), R.id.list_item, budgets);
+        for (int i =0; i < budgets.size(); i++) {
+            Log.d("BUDGETITEM", budgets.get(i));
+        }
 
+        // create ArrayAdapter and use it to bind tags to the ListView
+        adapter = new ArrayAdapter<>(getActivity(), R.layout.list_item, R.id.budget_item, budgets);
+
+        budgetLV.setAdapter(adapter);
 
         return view;
     }

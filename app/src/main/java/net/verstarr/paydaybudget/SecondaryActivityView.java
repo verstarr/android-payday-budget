@@ -1,14 +1,14 @@
 package net.verstarr.paydaybudget;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-public class SecondaryActivityView extends ActionBarActivity {
+public class SecondaryActivityView extends Activity {
 
     private Fragment bannerFrag;
     private Fragment listViewFrag;
@@ -26,7 +26,7 @@ public class SecondaryActivityView extends ActionBarActivity {
         //TODO add if SavedInstantState == null
 
         bannerFrag = new PayDayBannerFragment();
-        fragTransaction = getFragmentManager().beginTransaction().add(R.id.calendar_container, bannerFrag);
+        fragTransaction = getFragmentManager().beginTransaction().add(R.id.cal_banner_container, bannerFrag);
         fragTransaction.commit();
 
         listViewFrag = new BudgetListFragment();
@@ -58,7 +58,7 @@ public class SecondaryActivityView extends ActionBarActivity {
             case R.id.expand_calendar:
 
                 Fragment frag = new CalendarActivityFragment();
-                FragmentTransaction fragTrans = getFragmentManager().beginTransaction().replace(R.id.calendar_container, frag);
+                FragmentTransaction fragTrans = getFragmentManager().beginTransaction().replace(R.id.cal_banner_container, frag);
                 fragTrans.commit();
 
                 if(item.isVisible()) {
@@ -72,7 +72,7 @@ public class SecondaryActivityView extends ActionBarActivity {
             case R.id.minimize_calendar:
 
                 Fragment tempfrag = new PayDayBannerFragment();
-                FragmentTransaction tempfragTrans = getFragmentManager().beginTransaction().replace(R.id.calendar_container, tempfrag);
+                FragmentTransaction tempfragTrans = getFragmentManager().beginTransaction().replace(R.id.cal_banner_container, tempfrag);
                 tempfragTrans.commit();
 
                 if(item.isVisible()) {
