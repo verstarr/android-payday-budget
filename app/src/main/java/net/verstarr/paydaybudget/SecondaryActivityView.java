@@ -4,11 +4,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-public class SecondaryActivityView extends Activity {
+public class SecondaryActivityView extends AppCompatActivity {
 
     private Fragment bannerFrag;
     private Fragment listViewFrag;
