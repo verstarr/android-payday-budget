@@ -1,7 +1,7 @@
 package net.verstarr.paydaybudget;
 
 import android.app.AlertDialog;
-import android.app.ListFragment;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class BudgetListFragment extends ListFragment {
+public class BudgetListFragment extends Fragment {
 
     private static final String BUDGETS = "budgets";
     private SharedPreferences savedBudgets;
