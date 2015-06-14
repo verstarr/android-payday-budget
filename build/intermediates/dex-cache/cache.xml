@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/pre-dexed/debug/classes-db9b96ca80564a82f57d93fd48f0a1e1d12dde81.jar" />
-    </item>
-    <item
-        jar="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/pre-dexed/debug/classes-8af99e950736070bfdb3cb3030d7ced1ce2f0acf.jar" />
+        <dex dex="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\pre-dexed\debug\classes-6679f15132364376eb79d7fab7c569d87a9ad218.jar" />
     </item>
     <item
-        jar="/Users/VerStarr22/Documents/School/Fall2014/CS371M/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\pre-dexed\debug\classes-72c6998185c459c177f3176b52b4f33e46789e65.jar" />
+    </item>
+    <item
+        jar="C:\Users\cxr0963\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-1a37fe0c0fd57ea5bcffc55fdf34f1b3b818631b.jar" />
+        <dex dex="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-d53b5bfbb681e07799cd0bc756590343db5a4698.jar" />
     </item>
     <item
-        jar="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/VerStarr22/Documents/PersonalProjects/PetProjects/payday-budget/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-ba3f847ff1993c16c7b7795bb0cc978d48fe5fde.jar" />
+        <dex dex="C:\Users\cxr0963\Documents\GitHub\android-payday-budget\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-89b21bb6060bc6a135b4e5db4157cbfe34c88245.jar" />
     </item>
 
 </items>
