@@ -7,12 +7,12 @@
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
         android:text="Calendar"
         android:id="@+id/btn_camera"
-        style="@style/CropButton"
-        android:textColor="#000000"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:textColor="#FFFFFF"
         android:layout_gravity="left|top" />
 
     <LinearLayout
