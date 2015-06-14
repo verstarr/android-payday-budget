@@ -9,7 +9,7 @@
         android:weightSum="1">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -24,6 +24,10 @@
                 android:gravity="center"
                 android:textSize="50dp" />
 
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -31,7 +35,7 @@
                 android:text="@string/daysToPayday"
                 android:id="@+id/daysDescTextView"
                 android:gravity="center"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:textSize="30dp" />
 
         </LinearLayout>

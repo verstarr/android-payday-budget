@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import net.verstarr.paydaybudget.util.Budget;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
