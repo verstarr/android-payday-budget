@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -39,11 +40,20 @@ public class BudgetListFragment extends ListFragment {
         budgets = new ArrayList<>(savedBudgets.getAll().keySet());
         Collections.sort(budgets, String.CASE_INSENSITIVE_ORDER);
 
-
         // create ArrayAdapter and use it to bind tags to the ListView
         adapter = new ArrayAdapter<>(getActivity(), R.id.budget_list, R.layout.list_item, budgets);
         budgetLV = (ListView) view.findViewById(R.id.budget_list);
         budgetLV.setAdapter(adapter);
+
+        Button newBudgetItemButton = (Button) view.findViewById(R.id.newBudgetItemButton);
+        newBudgetItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("CreateBudget", "Creating new budget item");
+                //TODO: Bring up a dialog to make a new budget
+            }
+        });
+
 
         budgetLV.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
