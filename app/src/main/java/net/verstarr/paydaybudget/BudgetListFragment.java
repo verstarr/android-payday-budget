@@ -24,11 +24,12 @@ import java.util.Collections;
 
 public class BudgetListFragment extends Fragment {
 
-    private static final String BUDGETS = "budgets";
+    //private static final String BUDGETS = "budgets";
     private SharedPreferences savedBudgets;
     private ListView budgetLV;
-    private ArrayList<String> budgets; // list of budgets for saved searches
-    private ArrayAdapter<String> adapter; // binds budgets to ListView
+    private ArrayList<Budget> budgets; // list of budgets for saved searches
+    private ArrayList<String> budgetTitles;
+    private ArrayAdapter adapter; // binds budgets to ListView
 
     // configures the BudgetListFragment when its View is created
     @Override
@@ -38,12 +39,23 @@ public class BudgetListFragment extends Fragment {
                 inflater.inflate(R.layout.fragment_budget_list, container, false);
 
         // A Saved list of the user's budgets
-        savedBudgets = this.getActivity().getSharedPreferences(BUDGETS, Context.MODE_PRIVATE);
-        budgets = new ArrayList<>(savedBudgets.getAll().keySet());
-        Collections.sort(budgets, String.CASE_INSENSITIVE_ORDER);
+        //savedBudgets = this.getActivity().getSharedPreferences(BUDGETS, Context.MODE_PRIVATE);
+        //budgets = new ArrayList<>(savedBudgets.getAll().keySet());
+        ;
+
+        budgets = new ArrayList<Budget>(5);
+        for (int i = 0; i < budgets.size(); i++) {
+            budgets.add(new Budget("Test" + i));
+        }
+
+        for (int j = 0; j < budgets.size(); j++) {
+            budgetTitles.add(budgets.get(j).getTitle());
+        }
+
+        Collections.sort(budgetTitles, String.CASE_INSENSITIVE_ORDER);
 
         // create ArrayAdapter and use it to bind tags to the ListView
-        adapter = new ArrayAdapter<>(getActivity(), R.id.budget_list, R.layout.list_item, budgets);
+        adapter = new ArrayAdapter<>(getActivity(), R.id.budget_list, R.layout.list_item, budgetTitles);
         budgetLV = (ListView) view.findViewById(R.id.budget_list);
         budgetLV.setAdapter(adapter);
 
