@@ -41,16 +41,7 @@ public class BudgetListFragment extends Fragment {
         // A Saved list of the user's budgets
         //savedBudgets = this.getActivity().getSharedPreferences(BUDGETS, Context.MODE_PRIVATE);
         //budgets = new ArrayList<>(savedBudgets.getAll().keySet());
-        ;
 
-        budgets = new ArrayList<Budget>(5);
-        for (int i = 0; i < budgets.size(); i++) {
-            budgets.add(new Budget("Test" + i));
-        }
-
-        for (int j = 0; j < budgets.size(); j++) {
-            budgetTitles.add(budgets.get(j).getTitle());
-        }
 
         Collections.sort(budgetTitles, String.CASE_INSENSITIVE_ORDER);
 

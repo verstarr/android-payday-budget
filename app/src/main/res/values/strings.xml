@@ -21,4 +21,6 @@
     <string name="OK">OK</string>
     <string name="confirmMessage">Are you sure you want to delete the search \"%s\"?</string>
     <string name="delete">Delete</string>
+    <string name="budget_hint">Budget Name ex. Bills</string>
+    <string name="newBudgetTitle">New Budget</string>
 </resources>
