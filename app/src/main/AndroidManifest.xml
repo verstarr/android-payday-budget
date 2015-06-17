@@ -29,6 +29,10 @@
             android:name="net.verstarr.paydaybudget.SecondaryActivityView"
             android:label="2nd View" >
         </activity>
+        <activity
+            android:name="net.verstarr.paydaybudget.NewBudgetActivity"
+            android:label="New Budget" >
+        </activity>
     </application>
 
 </manifest>

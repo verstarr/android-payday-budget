@@ -23,4 +23,12 @@
     <string name="delete">Delete</string>
     <string name="budget_hint">Budget Name ex. Bills</string>
     <string name="newBudgetTitle">New Budget</string>
+    <string name="newBudgetDescription">Budget Description</string>
+    <string name="newBudgetValuesTitle">Choose % or Amount</string>
+    <string name="percentTextView">Percent %</string>
+    <string name="budgetAmountTextView">Amount $</string>
+    <string name="budgetPercentEditText">50%</string>
+    <string name="budgetAmountEditText">$200.00</string>
+    <string name="saveBudgetButton">Save Budget</string>
+    <string name="cancelBudgetButton">Cancel</string>
 </resources>
