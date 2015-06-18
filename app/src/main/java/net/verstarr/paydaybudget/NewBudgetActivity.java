@@ -14,19 +14,21 @@ import android.widget.Button;
  */
 public class NewBudgetActivity extends AppCompatActivity {
 
-    Button saveButton = (Button) findViewById(R.id.saveButton);
-    Button cancelButton = (Button) findViewById(R.id.cancelButton);
+    private Button saveButton;
+    private Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_budget);
 
+        saveButton = (Button) findViewById(R.id.saveButton);
+
+        cancelButton = (Button) findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SecondaryActivityView.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
