@@ -1,19 +1,34 @@
 package net.verstarr.paydaybudget;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by VerStarr22 on 6/16/15.
  */
 public class NewBudgetActivity extends AppCompatActivity {
+
+    Button saveButton = (Button) findViewById(R.id.saveButton);
+    Button cancelButton = (Button) findViewById(R.id.cancelButton);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_budget);
 
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SecondaryActivityView.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
