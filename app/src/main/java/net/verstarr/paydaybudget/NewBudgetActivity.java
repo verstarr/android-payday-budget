@@ -8,12 +8,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import net.verstarr.paydaybudget.util.Budget;
 
 /**
  * Created by VerStarr22 on 6/16/15.
  */
 public class NewBudgetActivity extends AppCompatActivity {
 
+
+    private EditText budgetNameEditText;
+    private EditText budgetDescriptionEditText;
+    private EditText budgetPercentEditText;
     private Button saveButton;
     private Button cancelButton;
 
@@ -22,7 +29,18 @@ public class NewBudgetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_budget);
 
+        budgetNameEditText = (EditText) findViewById(R.id.budgetNameEditText);
+        budgetDescriptionEditText = (EditText) findViewById(R.id.budgetDescriptionEditText);
+        budgetPercentEditText = (EditText) findViewById(R.id.budgetPercentEditText);
+
         saveButton = (Button) findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Budget budget = new Budget(budgetNameEditText.getText().toString(), budgetDescriptionEditText.getText().toString(), Double.parseDouble(budgetPercentEditText.getText().toString()));
+                // TODO: Create the budget item then save it to the listview on the BudgetListFragment
+            }
+        });
 
         cancelButton = (Button) findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new View.OnClickListener() {

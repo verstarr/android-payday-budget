@@ -33,81 +33,40 @@
         android:layout_gravity="center_horizontal" />
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/budgetPercentEditText"
+            android:hint="@string/budgetPercentEditText" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/percentTextView"
-                android:id="@+id/budgetPercentTextView"
-                android:layout_gravity="center_horizontal" />
+    </LinearLayout>
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/budgetPercentEditText"
-                android:hint="@string/budgetPercentEditText" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="right" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveBudgetButton"
+            android:id="@+id/saveButton"
+            android:layout_gravity="center_horizontal" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/saveBudgetButton"
-                android:id="@+id/saveButton"
-                android:layout_gravity="right" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/budgetAmountTextView"
-                android:id="@+id/budgetAmountTextView"
-                android:layout_gravity="center_horizontal" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/editText2"
-                android:hint="@string/budgetAmountEditText" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cancelBudgetButton"
-                android:id="@+id/cancelButton"
-                android:layout_gravity="left" />
-        </LinearLayout>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelBudgetButton"
+            android:id="@+id/cancelButton"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
 </LinearLayout>

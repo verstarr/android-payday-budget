@@ -10,10 +10,17 @@ public class Budget {
     private String title;
     private String description;
     private double percent;
-    private double amount;
 
-    public Budget(String title) {
+    public Budget() {
+        this.title = "New Budget";
+        this.description = "Example";
+        this.percent = 20.0;
+    }
+
+    public Budget(String title, String description, double percent) {
         this.title = title;
+        this.description = description;
+        this.percent = percent;
     }
 
     public String getDescription() {
@@ -32,21 +39,11 @@ public class Budget {
         this.title = title;
     }
 
-    public double getPercent() {
+    public double getAmount() {
         return percent;
     }
 
-    public void setPercent(double percent) {
-        this.percent = percent;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
+    public void setAmount(double percent) { this.percent = percent; }
 
     // Returns a String percent for the budget_list after calculation
     public String percentString(double percent) {
